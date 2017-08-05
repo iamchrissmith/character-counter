@@ -9,10 +9,14 @@ function characterCounter(txt) {
     return this.result
   },
   this.printCount = () => {
-    countChars.forEach( (count) => {
-      console.log(count)
+    result = this.countChars()
+    Object.keys(result).forEach( (letter) => {
+      console.log(letter + ": " + result[letter])
     })
   }
 }
 
 module.exports = characterCounter
+
+const charCounter = new characterCounter('I really want to work for Wingspan')
+charCounter.printCount()
